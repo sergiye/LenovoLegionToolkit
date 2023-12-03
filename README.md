@@ -116,7 +116,7 @@ Join the [Legion Series Discord](https://discord.com/invite/legionseries) and he
 
 Lenovo Legion Toolkit is made for Lenovo Legion laptops, and other similar laptops like Ideapad Gaming, LOQ and their Chinese variants.
 
-Generations 6 (MY2021), 7 (MY2022) and 8 (MY2023) are supported, although some features also work on the 5th generation (MY2020).
+Generations 6 (MY2021), 7 (MY2022) and 8 (MY2023) are supported, although some features also work on the 5th generation (MY2020). Issues related to devices older than Gen 6 or that are not Legions are out of scope of this project.
 
 If you are getting an incompatible message on startup, you can check the *Contribution* section down at the bottom, to see how can you help. Keep in mind, that not always I can make all options compatible with all hardware since I do not have access to it.
 
@@ -136,7 +136,7 @@ The app allows to:
 
 - Change settings like power mode, battery charging mode, etc. that are available only through Vantage.
 - Spectrum RGB, 4-zone RGB and White backlight keyboards support.
-- Deactivate discrete GPU (nVidia only).
+- Deactivate discrete GPU (NVIDIA only).
 - View battery statistics.
 - Check for driver and software updates.
 - Check warranty status.
@@ -190,7 +190,7 @@ If you encounter issues, you might try to try alternative, experimental method o
 
 These options _are not_ Advanced Optimus and work separately from it.
 
-### Deactivate discrete nVidia GPU
+### Deactivate discrete NVIDIA GPU
 
 Sometimes discrete GPU stays active even when it should not. This can happen for example, if you work with an external screen and you disconnect it - some processes will keep running on discrete GPU keeping it alive and shortening battery life.
 
@@ -203,7 +203,7 @@ Deactivate button will be enabled when dGPU is active, you have Hybrid mode enab
 
 Keep in mind that some apps may not like this feature and crash when you deactivate dGPU.
 
-### Overclock discrete nVidia GPUs
+### Overclock discrete NVIDIA GPUs
 
 The overclock option is intended for simple overclocking, similar to the one available in Vantage. It is not intended to replace tools like Afterburner. Here are some points to keep in mind:
 * Make sure GPU overclocking is enabled in BIOS, if your laptop has such option.
@@ -218,6 +218,10 @@ Lenovo Legion Toolkit will automatically switch Windows power plans when Power M
 On some laptops though, Lenovo Vantage never switched power plans. If you have one of the laptops where Lenovo Vantage does not change Windows power plans automatically you can override this behavior in Settings. This will allow Toolkit to always change Windows power plans, even if Lenovo Vantage is running in the background.
 
 Laptops that have S0 Low Power mode enabled, also known as Modern Standby, do not work well with mutliple power plans, especially with performance power plans.
+
+### Boot Logo
+
+On Gen 6 and 7 laptops, it is possible to change the boot logo (the default "Legion" image you see at boot). Boot logo is *not* stored in UEFI - it is stored on the UEFI partition on boot drive. When setting custom boot logo, LLT conducts basic checks, like resolution, image format and calculates a checksum. To ensure compatibility. However, the real verification happens on the next boot. UEFI will attempt to load the image from UEFI partition and show it. If that fails for whatever reason, default image will be used. Exact criteria, except for resolution and image format, are not known and some images might not be shown. In this case, try another image, edited with different image editor.
 
 ## Donate
 
@@ -262,8 +266,8 @@ Many thanks to everyone else, who monitors and corrects translations!
 
 ## FAQ
 
-* [Why do I get a message that Vantage is still running, even though I uninstalled it?](#vantage-running)
-* [Why is my antivirus reporting that the installer contains a virus/trojan/malware?](#virus)
+* [Why do I get a message that Vantage is still running, even though I uninstalled it?](#faq-vantage-running)
+* [Why is my antivirus reporting that the installer contains a virus/trojan/malware?](#faq-virus)
 * [Can I customize hotkeys?](#faq-custom-hotkeys)
 * [Can I customize Conservation mode threshold?](#faq-customize-conservation-mode)
 * [Can I customize fans in Quiet, Balance or Performance modes?](#faq-fan-curves)
@@ -277,7 +281,8 @@ Many thanks to everyone else, who monitors and corrects translations!
 * [Can you add fan control to other models?](#faq-fan-control)
 * [Why don't I see the custom tooltip when I hover LLT icon in tray?](#faq-custom-tooltip)
 * [How can I OC/UV my CPU?](#faq-cpu-oc)
-* [What, if I overclocked my GPU too much?](#faq-gpu-oc)
+* [What if I overclocked my GPU too much?](#faq-gpu-oc)
+* [Why is my Boot Logo not applied?](#faq-boot-logo)
 * [Which generation is my laptop?](#faq-which-gen)
 
 
@@ -358,12 +363,16 @@ In Windows 10 and 11, Microsoft did plenty of changes to the tray, breaking a lo
 
 There are very good tools like [Intel XTU](https://www.intel.com/content/www/us/en/download/17881/intel-extreme-tuning-utility-intel-xtu.html) (which is used by Vantage) or [ThrottleStop](https://www.techpowerup.com/download/techpowerup-throttlestop/) made just for that.
 
-#### <a id="faq-gpu-oc" />What, if I overclocked my GPU too much?
+#### <a id="faq-gpu-oc" />What if I overclocked my GPU too much?
 
 If you end up in a situation where your GPU is not stable and you can't boot into Windows, there are two things you can do:
 
 1. Go into BIOS and try to find and option similar to "Enabled GPU Overclocking" and disable it, start Windows, and toggle the BIOS option again to Enabled.
 2. Start Windows in Safe Mode, and delete `gpu_oc.json` file under LLT settings, which are located in `"%LOCALAPPDATA%\LenovoLegionToolkit`.
+
+#### <a id="faq-boot-logo" />Why is my Boot Logo not applied?
+
+When you change the Boot Logo, LLT verifies that it is in the format that is correct format and correct resolution. If LLT shows that boot logo is applied, it means that the setting was correctly saved to UEFI. If you don't see the custom boot logo, it means that even though UEFI is configured and custom image is saved to UEFI partition, your UEFI for some reason does not render it. In this case the best idea is to try a different image, maybe in different format, edited with different image editor etc. If the boot logo is not shown after all these steps, it's probably a problem with your BIOS version.
 
 #### <a id="faq-which-gen" />Which generation is my laptop?
 

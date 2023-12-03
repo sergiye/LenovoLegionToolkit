@@ -503,7 +503,7 @@ AVISO: Esta acción no se ejecutará correctamente, si la pantalla interna está
     <value>Terminar aplicaciones</value>
   </data>
   <data name="DiscreteGPUControl_Message" xml:space="preserve">
-    <value>Desactivar la GPU externa si está activa innecesariamente.</value>
+    <value>Desactivar la GPU dedicada si está activa innecesariamente.</value>
   </data>
   <data name="DiscreteGPUControl_MonitorConnected" xml:space="preserve">
     <value>Un monitor está conectado a la GPU nVidia.</value>
@@ -912,7 +912,7 @@ Activar esta opción si tiene conflictos con las aplicaciones en pantalla comple
     <value>Mejorar el tiempo de respuesta de la pantalla integrada.</value>
   </data>
   <data name="OverDriveControl_Title" xml:space="preserve">
-    <value>OverDrive</value>
+    <value>Aumentar la velocidad del tiempo de respuesta del monitor</value>
   </data>
   <data name="PackageControl_DownloadComplete_Message" xml:space="preserve">
     <value>{0} descargado(s)</value>
@@ -1684,7 +1684,7 @@ Esta configuración sólo tiene efecto si el modo personalizado está activado.<
     <value>Preestablecido</value>
   </data>
   <data name="StatusTrayPopup_DiscreteGPU" xml:space="preserve">
-    <value>GPU externa</value>
+    <value>GPU dedicada</value>
   </data>
   <data name="StatusTrayPopup_PowerState" xml:space="preserve">
     <value>Estado de energía</value>
@@ -1950,5 +1950,8 @@ Requiere un reinicio.</value>
   </data>
   <data name="Off" xml:space="preserve">
     <value>Apagado</value>
+  </data>
+  <data name="BootLogoWindow_Description" xml:space="preserve">
+	  <value>El logo de arranque personalizado debe tener un tamaño exacto de {0} píxeles. Los formatos soportados son: {1}.</value>
   </data>
 </root>
