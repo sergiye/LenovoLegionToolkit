@@ -221,7 +221,7 @@ Laptops that have S0 Low Power mode enabled, also known as Modern Standby, do no
 
 ### Boot Logo
 
-On Gen 6 and 7 laptops, it is possible to change the boot logo (the default "Legion" image you see at boot). Boot logo is *not* stored in UEFI - it is stored on the UEFI partition on boot drive. When setting custom boot logo, LLT conducts basic checks, like resolution, image format and calculates a checksum. To ensure compatibility. However, the real verification happens on the next boot. UEFI will attempt to load the image from UEFI partition and show it. If that fails for whatever reason, default image will be used. Exact criteria, except for resolution and image format, are not known and some images might not be shown. In this case, try another image, edited with different image editor.
+On Gen 6 and 7 laptops, it is possible to change the boot logo (the default "Legion" image you see at boot). Boot logo is *not* stored in UEFI - it is stored on the UEFI partition on boot drive. When setting custom boot logo, LLT conducts basic checks, like resolution, image format and calculates a checksum to ensure compatibility. However, the real verification happens on the next boot. UEFI will attempt to load the image from UEFI partition and show it. If that fails for whatever reason, default image will be used. Exact criteria, except for resolution and image format, are not known and some images might not be shown. In this case, try another image, edited with different image editor.
 
 ## Donate
 
@@ -283,6 +283,7 @@ Many thanks to everyone else, who monitors and corrects translations!
 * [How can I OC/UV my CPU?](#faq-cpu-oc)
 * [What if I overclocked my GPU too much?](#faq-gpu-oc)
 * [Why is my Boot Logo not applied?](#faq-boot-logo)
+* [Why do I see stuttering when using Smart Fn Lock?](#faq-smart-fn-lock-stutter)
 * [Which generation is my laptop?](#faq-which-gen)
 
 
@@ -373,6 +374,10 @@ If you end up in a situation where your GPU is not stable and you can't boot int
 #### <a id="faq-boot-logo" />Why is my Boot Logo not applied?
 
 When you change the Boot Logo, LLT verifies that it is in the format that is correct format and correct resolution. If LLT shows that boot logo is applied, it means that the setting was correctly saved to UEFI. If you don't see the custom boot logo, it means that even though UEFI is configured and custom image is saved to UEFI partition, your UEFI for some reason does not render it. In this case the best idea is to try a different image, maybe in different format, edited with different image editor etc. If the boot logo is not shown after all these steps, it's probably a problem with your BIOS version.
+
+#### <a id="faq-smart-fn-lock-stutter" />Why do I see stuttering when using Smart Fn Lock?
+
+On some BIOS versions, toggling Fn Lock causes a brief stutter and since Smart Fn Lock is basically an automatic toggle for Fn Lock, it is also affected by this issue. There are no solutions to this problem as of now.
 
 #### <a id="faq-which-gen" />Which generation is my laptop?
 
