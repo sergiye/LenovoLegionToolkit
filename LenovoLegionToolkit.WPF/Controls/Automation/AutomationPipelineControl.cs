@@ -287,6 +287,9 @@ public class AutomationPipelineControl : UserControl
         if (AutomationPipeline.Trigger is IUserInactivityPipelineTrigger ut && ut.InactivityTimeSpan > TimeSpan.Zero)
             result += $" | {string.Format(Resource.AutomationPipelineControl_SubtitlePart_After, ut.InactivityTimeSpan.Humanize(culture: Resource.Culture))}";
 
+        if (AutomationPipeline.Trigger is IWiFiConnectedPipelineTrigger wt && wt.Ssids.Any())
+            result += $" | {string.Join(",", wt.Ssids)}";
+
         return result;
     }
 

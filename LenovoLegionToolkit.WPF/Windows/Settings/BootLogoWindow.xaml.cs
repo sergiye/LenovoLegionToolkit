@@ -41,12 +41,16 @@ public partial class BootLogoWindow
             _revertToDefaultButton.IsEnabled = false;
 
             await BootLogo.DisableAsync();
+
+            _resultTextBlock.Text = Resource.BootLogoWindow_SetDefaultSuccess;
+
             Refresh();
         }
         catch (Exception ex)
         {
             if (Log.Instance.IsTraceEnabled)
                 Log.Instance.Trace($"Default logo could not be set.", ex);
+            _resultTextBlock.Text = string.Format(Resource.BootLogoWindow_SetDefaultFailed, GetDescription(ex));
         }
         finally
         {
@@ -77,12 +81,17 @@ public partial class BootLogoWindow
             var file = ofd.FileName;
 
             await BootLogo.EnableAsync(file);
+
+            _resultTextBlock.Text = Resource.BootLogoWindow_SetCustomSuccess;
+
             Refresh();
         }
         catch (Exception ex)
         {
             if (Log.Instance.IsTraceEnabled)
                 Log.Instance.Trace($"Custom logo could not be set.", ex);
+
+            _resultTextBlock.Text = string.Format(Resource.BootLogoWindow_SetCustomFailed, GetDescription(ex));
         }
         finally
         {
@@ -92,4 +101,13 @@ public partial class BootLogoWindow
 
     private void CloseButton_Click(object sender, RoutedEventArgs e) => Close();
 
+    private static string GetDescription(Exception exception) => exception switch
+    {
+        CantSetUEFIPrivilegeException => Resource.BootLogoWindow_SetError_Cannot_Set_UEFI_Privilege,
+        CantMountUEFIPartitionException => Resource.BootLogoWindow_SetError_Cannot_Mount_EFI_Partition,
+        NotEnoughSpaceOnUEFIPartitionException => Resource.BootLogoWindow_SetError_Not_Enough_Free_Space_On_EFI_Partition,
+        InvalidBootLogoImageSizeException => Resource.BootLogoWindow_SetError_Invalid_Image_Size,
+        InvalidBootLogoImageFormatException => Resource.BootLogoWindow_SetError_Invalid_Image_Format,
+        _ => exception.Message
+    };
 }

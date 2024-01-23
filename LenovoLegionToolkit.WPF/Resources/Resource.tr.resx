@@ -1949,19 +1949,55 @@ Yeniden başlatma gerektirir.</value>
     <value>Kapalı</value>
   </data>
   <data name="BootLogoWindow_Description" xml:space="preserve">
-	  <value>Özel önyükleme logosu tam olarak {0} piksel olmalı.
+    <value>Özel önyükleme logosu tam olarak {0} piksel olmalı.
 Desteklenen biçimler: {1}.</value>
   </data>
   <data name="BatteryNightChargeModeControl_Title" xml:space="preserve">
-	  <value>Gecelik Pil Şarjı</value>
+    <value>Gecelik Pil Şarjı</value>
   </data>
   <data name="BatteryNightChargeModeControl_Message" xml:space="preserve">
-	  <value>Etkinleştirildiğinde, bu cihaz gece takıldığında %80 oranında şarj olur ve sabah siz bu cihazı kullandığınızda şarj işlemi %100 oranında biter.</value>
+    <value>Etkinleştirildiğinde, bu cihaz gece takıldığında %80 oranında şarj olur ve sabah siz bu cihazı kullandığınızda şarj işlemi %100 oranında biter.</value>
   </data>
   <data name="BatteryNightChargeAutomationStepControl_Title" xml:space="preserve">
-	  <value>Gecelik Pil Şarjı</value>
+    <value>Gecelik Pil Şarjı</value>
   </data>
   <data name="BatteryNightChargeAutomationStepControl_Message" xml:space="preserve">
-	  <value>Etkinleştirildiğinde, bu cihaz gece takıldığında %80 oranında şarj olur ve sabah siz bu cihazı kullandığınızda şarj işlemi %100 oranında biter.</value>
+    <value>Etkinleştirildiğinde, bu cihaz gece takıldığında %80 oranında şarj olur ve sabah siz bu cihazı kullandığınızda şarj işlemi %100 oranında biter.</value>
+  </data>
+  <data name="BootLogoWindow_SetError_Invalid_Image_Size" xml:space="preserve">
+    <value>Geçersiz görsel boyutu.</value>
+  </data>
+  <data name="BootLogoWindow_SetError_Invalid_Image_Format" xml:space="preserve">
+    <value>Geçersiz görsel biçimi.</value>
+  </data>
+  <data name="BootLogoWindow_SetError_Cannot_Mount_EFI_Partition" xml:space="preserve">
+    <value>EFI bölümü bağlanamıyor.</value>
+  </data>
+  <data name="BootLogoWindow_SetError_Cannot_Set_UEFI_Privilege" xml:space="preserve">
+    <value>UEFI ayrıcalığı ayarlanamıyor.</value>
+  </data>
+  <data name="BootLogoWindow_SetError_Not_Enough_Free_Space_On_EFI_Partition" xml:space="preserve">
+    <value>EFI bölümünde yeterli boş alan yok.</value>
+  </data>
+  <data name="BootLogoWindow_SetCustomFailed" xml:space="preserve">
+    <value>Özel logo ayarlanamadı: {0}</value>
+  </data>
+  <data name="BootLogoWindow_SetDefaultFailed" xml:space="preserve">
+    <value>Varsayılan logo ayarlanamadı: {0}</value>
+  </data>
+  <data name="BootLogoWindow_SetDefaultSuccess" xml:space="preserve">
+    <value>Varsayılan başlangıç logosu ayarla.</value>
+  </data>
+  <data name="BootLogoWindow_SetCustomSuccess" xml:space="preserve">
+    <value>Özel başlangıç logosu ayarla.</value>
+  </data>
+  <data name="WiFiConnectedPipelineTriggerTabItemContent_NetworkName" xml:space="preserve">
+	  <value>Ağ adı (SSID)</value>
+  </data>
+  <data name="WiFiConnectedPipelineTriggerTabItemContent_CopyCurrentNetworkName" xml:space="preserve">
+	  <value>Mevcut ağ adını kopyala</value>
+  </data>
+  <data name="WiFiConnectedPipelineTriggerTabItemContent_LeaveEmptyForAnyNetwork" xml:space="preserve">
+	  <value>Herhangi bir Wi-Fi ağı için boş bırakın.</value>
   </data>
 </root>

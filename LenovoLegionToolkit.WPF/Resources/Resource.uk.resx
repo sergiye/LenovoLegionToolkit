@@ -1945,19 +1945,55 @@
     <value>Вимкнено</value>
   </data>
   <data name="BootLogoWindow_Description" xml:space="preserve">
-	  <value>Користувальницька познака завантаження має бути рівно {0} пікселів.
+    <value>Користувальницька познака завантаження має бути рівно {0} пікселів.
 Підтримувані формати: {1}.</value>
   </data>
   <data name="BatteryNightChargeModeControl_Title" xml:space="preserve">
-	  <value>Заряджання протягом ночі</value>
+    <value>Заряджання протягом ночі</value>
   </data>
   <data name="BatteryNightChargeModeControl_Message" xml:space="preserve">
-	  <value>Якщо увімкнено, цей пристрій буде заряджатися до 80% при підключенні протягом ночі та закінчить заряджання до 100% до моменту використання пристрою вранці.</value>
+    <value>Якщо увімкнено, цей пристрій буде заряджатися до 80% при підключенні протягом ночі та закінчить заряджання до 100% до моменту використання пристрою вранці.</value>
   </data>
   <data name="BatteryNightChargeAutomationStepControl_Title" xml:space="preserve">
-	  <value>Заряджання протягом ночі</value>
+    <value>Заряджання протягом ночі</value>
   </data>
   <data name="BatteryNightChargeAutomationStepControl_Message" xml:space="preserve">
-	  <value>Якщо увімкнено, цей пристрій буде заряджатися до 80% при підключенні протягом ночі та закінчить заряджання до 100% до моменту використання пристрою вранці.</value>
+    <value>Якщо увімкнено, цей пристрій буде заряджатися до 80% при підключенні протягом ночі та закінчить заряджання до 100% до моменту використання пристрою вранці.</value>
+  </data>
+  <data name="BootLogoWindow_SetError_Invalid_Image_Size" xml:space="preserve">
+    <value>Неприпустимий розмір зображення.</value>
+  </data>
+  <data name="BootLogoWindow_SetError_Invalid_Image_Format" xml:space="preserve">
+    <value>Неприпустимий формат зображення.</value>
+  </data>
+  <data name="BootLogoWindow_SetError_Cannot_Mount_EFI_Partition" xml:space="preserve">
+    <value>Не вдалося змонтувати розділ EFI.</value>
+  </data>
+  <data name="BootLogoWindow_SetError_Cannot_Set_UEFI_Privilege" xml:space="preserve">
+    <value>Не вдалося встановити привілеї UEFI.</value>
+  </data>
+  <data name="BootLogoWindow_SetError_Not_Enough_Free_Space_On_EFI_Partition" xml:space="preserve">
+    <value>Недостатньо вільного місця на розділі EFI.</value>
+  </data>
+  <data name="BootLogoWindow_SetCustomFailed" xml:space="preserve">
+    <value>Користувацький логотип не може бути встановленим: {0}</value>
+  </data>
+  <data name="BootLogoWindow_SetDefaultFailed" xml:space="preserve">
+    <value>Логотип за замовчуванням не може бути встановленим: {0}</value>
+  </data>
+  <data name="BootLogoWindow_SetDefaultSuccess" xml:space="preserve">
+    <value>Логотип за замовчуванням встановлено.</value>
+  </data>
+  <data name="BootLogoWindow_SetCustomSuccess" xml:space="preserve">
+    <value>Користувацький екран завантаження встановлено.</value>
+  </data>
+  <data name="WiFiConnectedPipelineTriggerTabItemContent_NetworkName" xml:space="preserve">
+	  <value>Назва мережі (SSID)</value>
+  </data>
+  <data name="WiFiConnectedPipelineTriggerTabItemContent_CopyCurrentNetworkName" xml:space="preserve">
+	  <value>Скопіювати поточну назву мережі</value>
+  </data>
+  <data name="WiFiConnectedPipelineTriggerTabItemContent_LeaveEmptyForAnyNetwork" xml:space="preserve">
+	  <value>Залиште пустим для будь-якої мережі Wi-Fi.</value>
   </data>
 </root>

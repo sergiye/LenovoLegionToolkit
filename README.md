@@ -74,9 +74,28 @@ Please be patient and read through this readme carefully - it contains important
 
 ## Download
 
-You can download the installer from the [Releases page](https://github.com/BartoszCichecki/LenovoLegionToolkit/releases/latest) or install using [winget](https://github.com/microsoft/winget-cli):
+You can download the program by the following ways:
 
-`winget install BartoszCichecki.LenovoLegionToolkit`
+- Manually from the [Releases page](https://github.com/BartoszCichecki/LenovoLegionToolkit/releases/latest)
+- Using [winget](https://github.com/microsoft/winget-cli):
+
+  ```sh
+  winget install BartoszCichecki.LenovoLegionToolkit
+  ```
+
+- Using [Scoop](https://scoop.sh):
+
+  ```sh
+  scoop bucket add versions
+  ```
+
+  ```sh
+  scoop bucket add extras
+  ```
+  
+  ```sh
+  scoop install extras/lenovolegiontoolkit
+  ```
 
 #### Next steps
 
@@ -97,6 +116,8 @@ If for whatever reason LLT installer did not setup .NET properly:
 2. Find section ".NET Desktop Runtime"
 3. Download x64 Windows installer
 4. Run the installer
+
+> Note: If you installed LLT from Scoop, .NET 6 should have been installed automatically as a dependency. If anything fails, use `scoop update` to update all packages and try to reinstall LLT with `--force` argument.
 
 After following these steps, you can open Terminal and type: `dotnet --info`. In the output look for section `.NET runtimes installed`, in this section you should see something like:
 
@@ -397,6 +418,10 @@ Some, less frequently needed, features or options can be enabled by using additi
 * `--force-disable-spectrumkb` - disables all lighting features for Spectrum per-key RGB keyboards
 * `--force-disable-lenovolighting` - disables all lighting features related to panel logo, ports backlight and some white backlit keyboards
 * `--experimental-gpu-working-mode` - changes GPU Working Mode switch to use experimental method, that is used by LegionZone _(No support is provided when this argument is used)_
+* `--proxyUrl=example.com` - specifies proxy server URL that LLT should use
+* `--proxyUsername=some_username` - if applicable, specifies proxy server username to use
+* `--proxyPassword=some_password` - if applicable, specifies proxy server password to use
+* `--proxyAllowAllCerts` - if needed relaxes criteria needed to establish HTTPS/SSL connections via proxy server
 
 If you decide to use the arguments with `args.txt` file:
 1. Go to `%LOCALAPPDATA%\LenovoLegionToolkit`
