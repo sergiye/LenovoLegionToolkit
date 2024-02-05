@@ -263,7 +263,7 @@ Special thanks to:
 
 Translations provided by:
 * Bulgarian - [Ekscentricitet](https://github.com/Ekscentricitet)
-* Chinese (Simplified) - [凌卡Karl](https://github.com/KarlLee830)
+* Chinese (Simplified) - [凌卡Karl](https://github.com/KarlLee830), [Ace-Radom](https://github.com/Ace-Radom)
 * Chinese (Traditional) - [flandretw](https://github.com/flandretw)
 * Czech - J0sef
 * Dutch - Melm, [JarneStaalPXL](https://github.com/JarneStaalPXL)
@@ -281,7 +281,7 @@ Translations provided by:
 * Russian - [Edward Johan](https://github.com/younyokel)
 * Turkish - Undervolt
 * Ukrainian -  [Vladyslav Prydatko](https://github.com/va1dee), [Dmytro Zozulia](https://github.com/Nollasko)
-* Vietnamese - Not_Nhan, Kuri
+* Vietnamese - Not_Nhan, Kuri, Nagidrop
 
 Many thanks to everyone else, who monitors and corrects translations!
 

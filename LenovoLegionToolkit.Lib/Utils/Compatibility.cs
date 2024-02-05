@@ -28,7 +28,6 @@ public static class Compatibility
         "16ACH",
         "16APH",
         "16ARH",
-        "16ARP",
         "16ARX",
         "16IAH",
         "16IAX",
@@ -39,6 +38,7 @@ public static class Compatibility
         "15ACH",
         "15APH",
         "15ARH",
+        "15ARP",
         "15IAH",
         "15IAX",
         "15IHU",
@@ -334,7 +334,7 @@ public static class Compatibility
         if (!supportedPowerModes.Contains(PowerModeState.GodMode))
             return false;
 
-        return smartFanVersion is 6 || legionZoneVersion is 3;
+        return smartFanVersion is 6 or 7 || legionZoneVersion is 3 or 4;
     }
 
     private static async Task<bool> GetSupportsGSyncAsync()

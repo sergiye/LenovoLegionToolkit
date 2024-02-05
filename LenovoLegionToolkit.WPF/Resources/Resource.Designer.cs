@@ -169,6 +169,15 @@ namespace LenovoLegionToolkit.WPF.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Delete.
+        /// </summary>
+        public static string AbstractAutomationStepControl_Delete {
+            get {
+                return ResourceManager.GetString("AbstractAutomationStepControl_Delete", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Active.
         /// </summary>
         public static string Active {
@@ -1446,6 +1455,15 @@ namespace LenovoLegionToolkit.WPF.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Refresh.
+        /// </summary>
+        public static string DeviceInformationWindow_Refresh {
+            get {
+                return ResourceManager.GetString("DeviceInformationWindow_Refresh", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Serial number.
         /// </summary>
         public static string DeviceInformationWindow_SerialNumber_Title {
@@ -2616,6 +2634,15 @@ namespace LenovoLegionToolkit.WPF.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Information.
+        /// </summary>
+        public static string Information {
+            get {
+                return ResourceManager.GetString("Information", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Turn on the laptop when a charger is connected..
         /// </summary>
         public static string InstantBootAutomationStepControl_Message {
@@ -3420,6 +3447,15 @@ namespace LenovoLegionToolkit.WPF.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Download.
+        /// </summary>
+        public static string PackageControl_Download {
+            get {
+                return ResourceManager.GetString("PackageControl_Download", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to {0} downloaded!.
         /// </summary>
         public static string PackageControl_DownloadComplete_Message {
@@ -3497,6 +3533,15 @@ namespace LenovoLegionToolkit.WPF.Resources {
         public static string PackageControl_OldPackageWarning {
             get {
                 return ResourceManager.GetString("PackageControl_OldPackageWarning", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Open README.
+        /// </summary>
+        public static string PackageControl_OpenReadme {
+            get {
+                return ResourceManager.GetString("PackageControl_OpenReadme", resourceCulture);
             }
         }
         
@@ -3583,7 +3628,7 @@ namespace LenovoLegionToolkit.WPF.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Download to.
+        ///   Looks up a localized string similar to Download folder.
         /// </summary>
         public static string PackagesPage_DownloadTo {
             get {
@@ -3615,6 +3660,15 @@ namespace LenovoLegionToolkit.WPF.Resources {
         public static string PackagesPage_OnlyShowUpdates {
             get {
                 return ResourceManager.GetString("PackagesPage_OnlyShowUpdates", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Open Download folder.
+        /// </summary>
+        public static string PackagesPage_OpenDownloadTo {
+            get {
+                return ResourceManager.GetString("PackagesPage_OpenDownloadTo", resourceCulture);
             }
         }
         
@@ -4399,6 +4453,15 @@ namespace LenovoLegionToolkit.WPF.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Settings.
+        /// </summary>
+        public static string Settings {
+            get {
+                return ResourceManager.GetString("Settings", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Change the accent color of the app..
         /// </summary>
         public static string SettingsPage_AccentColor_Description {
@@ -4633,6 +4696,33 @@ namespace LenovoLegionToolkit.WPF.Resources {
         public static string SettingsPage_ExcludeRefreshRates_Title {
             get {
                 return ResourceManager.GetString("SettingsPage_ExcludeRefreshRates_Title", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Share fan speed, battery temperature etc. with HWiNFO64. You may need to restart HWiNFO64 after changing this option..
+        /// </summary>
+        public static string SettingsPage_HWiNFO_Message {
+            get {
+                return ResourceManager.GetString("SettingsPage_HWiNFO_Message", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to HWiNFO64.
+        /// </summary>
+        public static string SettingsPage_HWiNFO_Title {
+            get {
+                return ResourceManager.GetString("SettingsPage_HWiNFO_Title", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Integrations.
+        /// </summary>
+        public static string SettingsPage_Integrations_Title {
+            get {
+                return ResourceManager.GetString("SettingsPage_Integrations_Title", resourceCulture);
             }
         }
         
@@ -4948,6 +5038,15 @@ namespace LenovoLegionToolkit.WPF.Resources {
         public static string SpectrumKeyboardBacklightControl_NoEffects_Text {
             get {
                 return ResourceManager.GetString("SpectrumKeyboardBacklightControl_NoEffects_Text", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Preset.
+        /// </summary>
+        public static string SpectrumKeyboardBacklightControl_Preset {
+            get {
+                return ResourceManager.GetString("SpectrumKeyboardBacklightControl_Preset", resourceCulture);
             }
         }
         

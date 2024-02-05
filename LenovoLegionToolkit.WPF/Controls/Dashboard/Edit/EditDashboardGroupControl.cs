@@ -3,13 +3,14 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using System.Windows;
+using System.Windows.Automation;
 using System.Windows.Controls;
 using LenovoLegionToolkit.WPF.Resources;
 using LenovoLegionToolkit.WPF.Utils;
 using LenovoLegionToolkit.WPF.Windows.Dashboard;
 using Wpf.Ui.Common;
-using Wpf.Ui.Controls;
 using Button = Wpf.Ui.Controls.Button;
+using CardExpander = LenovoLegionToolkit.WPF.Controls.Custom.CardExpander;
 
 namespace LenovoLegionToolkit.WPF.Controls.Dashboard.Edit;
 
@@ -17,8 +18,7 @@ public class EditDashboardGroupControl : UserControl
 {
     private readonly CardExpander _cardExpander = new()
     {
-        Margin = new(0, 0, 0, 8),
-        IsExpanded = true
+        Margin = new(0, 0, 0, 8)
     };
 
     private readonly CardHeaderControl _cardHeaderControl = new();
@@ -113,6 +113,12 @@ public class EditDashboardGroupControl : UserControl
         _cardHeaderControl.Accessory = _buttonsStackPanel;
         _cardExpander.Header = _cardHeaderControl;
         _cardExpander.Content = _stackPanel;
+
+        AutomationProperties.SetName(_cardExpander, _cardHeaderControl.Title);
+        AutomationProperties.SetName(_editButton, _cardHeaderControl.Title);
+        AutomationProperties.SetName(_moveUpButton, _cardHeaderControl.Title);
+        AutomationProperties.SetName(_moveDownButton, _cardHeaderControl.Title);
+        AutomationProperties.SetName(_deleteButton, _cardHeaderControl.Title);
 
         Content = _cardExpander;
     }

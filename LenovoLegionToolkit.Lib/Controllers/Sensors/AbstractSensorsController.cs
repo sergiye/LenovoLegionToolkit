@@ -103,6 +103,13 @@ public abstract class AbstractSensorsController : ISensorsController
         return result;
     }
 
+    public async Task<(int cpuFanSpeed, int gpuFanSpeed)> GetFanSpeedsAsync()
+    {
+        var cpuFanSpeed = await GetCpuCurrentFanSpeedAsync().ConfigureAwait(false);
+        var gpuFanSpeed = await GetGpuCurrentFanSpeedAsync().ConfigureAwait(false);
+        return (cpuFanSpeed, gpuFanSpeed);
+    }
+
     protected abstract Task<int> GetCpuCurrentTemperatureAsync();
 
     protected abstract Task<int> GetGpuCurrentTemperatureAsync();
@@ -170,7 +177,7 @@ public abstract class AbstractSensorsController : ISensorsController
 
     private GPUInfo GetGPUInfo()
     {
-        if (_gpuController.LastKnownState is GPUState.Inactive or GPUState.PoweredOff)
+        if (_gpuController.LastKnownState is GPUState.PoweredOff or GPUState.Unknown)
             return GPUInfo.Empty;
 
         try
