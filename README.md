@@ -209,6 +209,8 @@ All above settings are using built in functions of the EC and how well they work
 
 If you encounter issues, you might try to try alternative, experimental method of handling GPU Working Mode - see [Arguments](#arguments) section for more details.
 
+**Disabling dGPU via Device Manager DOES NOT disconnect the device and will cause high power consumption!**
+
 These options _are not_ Advanced Optimus and work separately from it.
 
 ### Deactivate discrete NVIDIA GPU
@@ -418,10 +420,11 @@ Some, less frequently needed, features or options can be enabled by using additi
 * `--force-disable-spectrumkb` - disables all lighting features for Spectrum per-key RGB keyboards
 * `--force-disable-lenovolighting` - disables all lighting features related to panel logo, ports backlight and some white backlit keyboards
 * `--experimental-gpu-working-mode` - changes GPU Working Mode switch to use experimental method, that is used by LegionZone _(No support is provided when this argument is used)_
-* `--proxyUrl=example.com` - specifies proxy server URL that LLT should use
-* `--proxyUsername=some_username` - if applicable, specifies proxy server username to use
-* `--proxyPassword=some_password` - if applicable, specifies proxy server password to use
-* `--proxyAllowAllCerts` - if needed relaxes criteria needed to establish HTTPS/SSL connections via proxy server
+* `--proxy-url=example.com` - specifies proxy server URL that LLT should use
+* `--proxy-username=some_username` - if applicable, specifies proxy server username to use
+* `--proxy-password=some_password` - if applicable, specifies proxy server password to use
+* `--proxy-allow-all-certs` - if needed relaxes criteria needed to establish HTTPS/SSL connections via proxy server
+* `--disable-update-checker` - disable update checks in LLT, in case you want to rely on winget, scoop etc.
 
 If you decide to use the arguments with `args.txt` file:
 1. Go to `%LOCALAPPDATA%\LenovoLegionToolkit`
