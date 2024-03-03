@@ -3808,6 +3808,15 @@ namespace LenovoLegionToolkit.WPF.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Period (minutes).
+        /// </summary>
+        public static string PeriodicActionPipelineTriggerTabItemContent_PeriodMinutes {
+            get {
+                return ResourceManager.GetString("PeriodicActionPipelineTriggerTabItemContent_PeriodMinutes", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Turn on or off the backlight of the ports on the back of the laptop..
         /// </summary>
         public static string PortsBacklightAutomationStepControl_Message {
@@ -4781,6 +4790,24 @@ namespace LenovoLegionToolkit.WPF.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Resets the counter for &quot;On battery since&quot; in the battery section when the system reboots..
+        /// </summary>
+        public static string SettingsPage_OnBatterySinceReset_Message {
+            get {
+                return ResourceManager.GetString("SettingsPage_OnBatterySinceReset_Message", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Reset &quot;On battery since&quot; at startup.
+        /// </summary>
+        public static string SettingsPage_OnBatterySinceReset_Title {
+            get {
+                return ResourceManager.GetString("SettingsPage_OnBatterySinceReset_Title", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Power.
         /// </summary>
         public static string SettingsPage_Power_Title {
@@ -5473,6 +5500,24 @@ namespace LenovoLegionToolkit.WPF.Resources {
         public static string TurnOffMonitorsControl_TurnOff {
             get {
                 return ResourceManager.GetString("TurnOffMonitorsControl_TurnOff", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Turn off WiFi.
+        /// </summary>
+        public static string TurnOffWiFiAutomationStepControl_Title {
+            get {
+                return ResourceManager.GetString("TurnOffWiFiAutomationStepControl_Title", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Turn on WiFi.
+        /// </summary>
+        public static string TurnOnWiFiAutomationStepControl_Title {
+            get {
+                return ResourceManager.GetString("TurnOnWiFiAutomationStepControl_Title", resourceCulture);
             }
         }
         

@@ -290,6 +290,9 @@ public class AutomationPipelineControl : UserControl
         if (AutomationPipeline.Trigger is IWiFiConnectedPipelineTrigger wt && wt.Ssids.Any())
             result += $" | {string.Join(",", wt.Ssids)}";
 
+        if (AutomationPipeline.Trigger is IPeriodicAutomationPipelineTrigger pet)
+            result += $" | {Resource.PeriodicActionPipelineTriggerTabItemContent_PeriodMinutes}: {pet.Period.TotalMinutes}";
+
         return result;
     }
 
@@ -356,6 +359,8 @@ public class AutomationPipelineControl : UserControl
             SpectrumKeyboardBacklightImportProfileAutomationStep s => new SpectrumKeyboardBacklightImportProfileAutomationStepControl(s),
             SpectrumKeyboardBacklightProfileAutomationStep s => new SpectrumKeyboardBacklightProfileAutomationStepControl(s),
             TurnOffMonitorsAutomationStep s => new TurnOffMonitorsAutomationStepControl(s),
+            TurnOffWiFiAutomationStep s => new TurnOffWiFiAutomationStepControl(s),
+            TurnOnWiFiAutomationStep s => new TurnOnWiFiAutomationStepControl(s),
             TouchpadLockAutomationStep s => new TouchpadLockAutomationStepControl(s),
             WhiteKeyboardBacklightAutomationStep s => new WhiteKeyboardBacklightAutomationStepControl(s),
             WinKeyAutomationStep s => new WinKeyAutomationStepControl(s),

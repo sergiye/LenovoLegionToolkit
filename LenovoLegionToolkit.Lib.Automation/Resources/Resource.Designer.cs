@@ -241,6 +241,15 @@ namespace LenovoLegionToolkit.Lib.Automation.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Periodic action.
+        /// </summary>
+        public static string PeriodicActionPipelineTrigger_DisplayName {
+            get {
+                return ResourceManager.GetString("PeriodicActionPipelineTrigger_DisplayName", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to When Power Mode is changed.
         /// </summary>
         public static string PowerModeAutomationPipelineTrigger_DisplayName {
@@ -291,6 +300,24 @@ namespace LenovoLegionToolkit.Lib.Automation.Resources {
         public static string UserInactivityAutomationPipelineTrigger_DisplayName_Zero {
             get {
                 return ResourceManager.GetString("UserInactivityAutomationPipelineTrigger_DisplayName_Zero", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to When WiFi is connected.
+        /// </summary>
+        public static string WiFiConnectedAutomationPipelineTrigger_DisplayName {
+            get {
+                return ResourceManager.GetString("WiFiConnectedAutomationPipelineTrigger_DisplayName", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to When WiFi is disconnected.
+        /// </summary>
+        public static string WiFiDisconnectedAutomationPipelineTrigger_DisplayName {
+            get {
+                return ResourceManager.GetString("WiFiDisconnectedAutomationPipelineTrigger_DisplayName", resourceCulture);
             }
         }
     }
