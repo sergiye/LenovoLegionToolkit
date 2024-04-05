@@ -906,13 +906,13 @@ Activar esta opción si tiene conflictos con las aplicaciones en pantalla comple
     <value>Mejorar el tiempo de respuesta de la pantalla integrada.</value>
   </data>
   <data name="OverDriveAutomationStepControl_Title" xml:space="preserve">
-    <value>Aumentar la velocidad del tiempo de respuesta del monitor</value>
+    <value>Aumentar la velocidad de tiempo de respuesta del monitor (OverDrive)</value>
   </data>
   <data name="OverDriveControl_Message" xml:space="preserve">
     <value>Mejorar el tiempo de respuesta de la pantalla integrada.</value>
   </data>
   <data name="OverDriveControl_Title" xml:space="preserve">
-    <value>Aumentar la velocidad del tiempo de respuesta del monitor</value>
+    <value>A toda velocidad</value>
   </data>
   <data name="PackageControl_DownloadComplete_Message" xml:space="preserve">
     <value>{0} descargado(s)</value>
@@ -2034,5 +2034,33 @@ Requiere un reinicio.</value>
   </data>
   <data name="AbstractAutomationStepControl_Delete" xml:space="preserve">
     <value>Eliminar</value>
+  </data>
+  <data name="PeriodicActionPipelineTriggerTabItemContent_PeriodMinutes" xml:space="preserve">
+    <value>Período (minutos)</value>
+    <comment>A prompt that is used both to ask the user to input an integer, representing the number of minutes between two periodic actions are triggered, and to inform the user what have they set once they are done configuring the action.</comment>
+  </data>
+  <data name="SettingsPage_OnBatterySinceReset_Message" xml:space="preserve">
+    <value>Restablece el contador de "En batería desde" en la sección de batería al reiniciar el sistema.</value>
+  </data>
+  <data name="SettingsPage_OnBatterySinceReset_Title" xml:space="preserve">
+    <value>Restablecer "En batería desde" al iniciar</value>
+  </data>
+  <data name="TurnOffWiFiAutomationStepControl_Title" xml:space="preserve">
+    <value>Apagar el WiFi</value>
+  </data>
+  <data name="TurnOnWiFiAutomationStepControl_Title" xml:space="preserve">
+    <value>Encender el WiFi</value>
+  </data>
+  <data name="RunAutomationStepControl_ProcessRunSilently" xml:space="preserve">
+    <value>Ejecutar silenciosamente</value>
+  </data>
+  <data name="RunAutomationStepControl_ProcessWaitUntilFinished" xml:space="preserve">
+    <value>Esperar a que finalice</value>
+  </data>
+  <data name="RunAutomationStepControl_ProcessRunSilently_Description" xml:space="preserve">
+	  <value>Ejecutar aplicaciones de consola, sin crear una ventana de consola.</value>
+  </data>
+  <data name="RunAutomationStepControl_ProcessWaitUntilFinished_Description" xml:space="preserve">
+	  <value>Esperar a que el programa o script termine de ejecutarse</value>
   </data>
 </root>

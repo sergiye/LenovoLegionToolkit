@@ -112,7 +112,7 @@ If you installed LLT on a clean Windows install, make sure to have necessary dri
 #### Problems with .NET?
 
 If for whatever reason LLT installer did not setup .NET properly:
-1. Go to https://dotnet.microsoft.com/en-us/download/dotnet/6.0
+1. Go to [https://dotnet.microsoft.com/en-us/download/dotnet6](https://dotnet.microsoft.com/en-us/download/dotnet/6.0)
 2. Find section ".NET Desktop Runtime"
 3. Download x64 Windows installer
 4. Run the installer
@@ -121,11 +121,11 @@ If for whatever reason LLT installer did not setup .NET properly:
 
 After following these steps, you can open Terminal and type: `dotnet --info`. In the output look for section `.NET runtimes installed`, in this section you should see something like:
 
-`Microsoft.NETCore.App 6.0.15 [C:\Program Files\dotnet\shared\Microsoft.NETCore.App]`
+`Microsoft.NETCore.App 6.0.0 [C:\Program Files\dotnet\shared\Microsoft.NETCore.App]`
 
 and
 
-`Microsoft.WindowsDesktop.App 6.0.15 [C:\Program Files\dotnet\shared\Microsoft.WindowsDesktop.App]`
+`Microsoft.WindowsDesktop.App 6.0.0 [C:\Program Files\dotnet\shared\Microsoft.WindowsDesktop.App]`
 
 The exact version number can be different, but as long as it is `6.x.x` it should be fine. If after these steps LLT still shows an error on startup that .NET couldn't be found or similar, the problem is on your machine and not with LLT.
 
@@ -188,6 +188,8 @@ Other lighting features like both 1 and 3 level white keyboard backlight, panel 
 * some (mostly Gen 6) laptops models might not show all options or show options that aren't there - this is due misconfigured BIOS that doesn't report availability of these features
 
 Lighting that required Corsair iCue is not supported by LLT.
+
+_**Important:** Riot Vanguard DRM (used in Valorant for example) is known to cause issues with RGB controls. If you don't see RGB settings and have it installed, make sure it doesn't run on startup or uninstall it._
 
 ### Hybrid Mode and GPU Working Modes
 
@@ -400,7 +402,7 @@ When you change the Boot Logo, LLT verifies that it is in the format that is cor
 
 #### <a id="faq-smart-fn-lock-stutter" />Why do I see stuttering when using Smart Fn Lock?
 
-On some BIOS versions, toggling Fn Lock causes a brief stutter and since Smart Fn Lock is basically an automatic toggle for Fn Lock, it is also affected by this issue. There are no solutions to this problem as of now.
+On some BIOS versions, toggling Fn Lock causes a brief stutter and since Smart Fn Lock is basically an automatic toggle for Fn Lock, it is also affected by this issue. Try disabling "Fool proof Fn Lock" (or similar) option in BIOS - it was reported that it fixes stutter when toggling Fn Lock.
 
 #### <a id="faq-which-gen" />Which generation is my laptop?
 

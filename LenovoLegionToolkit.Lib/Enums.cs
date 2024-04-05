@@ -197,6 +197,7 @@ public enum MicrophoneState
 [Flags]
 public enum ModifierKey
 {
+    None = 0,
     [Display(ResourceType = typeof(Resource), Name = "ModifierKey_Shift")]
     Shift = 1,
     [Display(ResourceType = typeof(Resource), Name = "ModifierKey_Ctrl")]
@@ -350,6 +351,14 @@ public enum PowerModeState
     GodMode = 254
 }
 
+public enum PowerStateEvent
+{
+    Unknown = -1,
+    StatusChange,
+    Suspend,
+    Resume,
+}
+
 public enum ProcessEventInfoType
 {
     Started,
@@ -365,7 +374,7 @@ public enum RebootType
     Delayed = 5
 }
 
-public enum RGBKeyboardBacklightChanged { }
+public enum RGBKeyboardBacklightChanged;
 
 public enum RGBKeyboardBacklightBrightness
 {
@@ -590,4 +599,4 @@ public enum WinKeyState
     On
 }
 
-public enum WinKeyChanged { }
+public enum WinKeyChanged;

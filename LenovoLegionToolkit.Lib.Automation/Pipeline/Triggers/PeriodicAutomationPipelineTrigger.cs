@@ -5,17 +5,12 @@ using LenovoLegionToolkit.Lib.Automation.Resources;
 
 namespace LenovoLegionToolkit.Lib.Automation.Pipeline.Triggers;
 
-public class PeriodicAutomationPipelineTrigger : IPeriodicAutomationPipelineTrigger
+[method: JsonConstructor]
+public class PeriodicAutomationPipelineTrigger(TimeSpan period) : IPeriodicAutomationPipelineTrigger
 {
     public string DisplayName => Resource.PeriodicActionPipelineTrigger_DisplayName;
 
-    public TimeSpan Period { get; }
-
-    [JsonConstructor]
-    public PeriodicAutomationPipelineTrigger(TimeSpan period)
-    {
-        Period = period;
-    }
+    public TimeSpan Period { get; } = period;
 
     public Task<bool> IsMatchingEvent(IAutomationEvent automationEvent)
     {
@@ -36,5 +31,5 @@ public class PeriodicAutomationPipelineTrigger : IPeriodicAutomationPipelineTrig
         return Task.FromResult(isPeriod);
     }
 
-    public void UpdateEnvironment(AutomationEnvironment environment) { }
+    public void UpdateEnvironment(AutomationEnvironment environment) => environment.Period = Period;
 }

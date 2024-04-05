@@ -31,15 +31,15 @@ public partial class SpectrumKeyboardBacklightControl
     private CancellationTokenSource? _refreshStateCancellationTokenSource;
     private Task? _refreshStateTask;
 
-    private RadioButton[] ProfileButtons => new[]
-    {
+    private RadioButton[] ProfileButtons =>
+    [
         _profileButton1,
         _profileButton2,
         _profileButton3,
         _profileButton4,
         _profileButton5,
         _profileButton6
-    };
+    ];
 
     protected override bool DisablesWhileRefreshing => false;
 
@@ -77,7 +77,7 @@ public partial class SpectrumKeyboardBacklightControl
         scaleTransform.ScaleY = scale;
     }
 
-    private void Listener_Changed(object? sender, SpecialKey e) => Dispatcher.Invoke(async () =>
+    private void Listener_Changed(object? sender, SpecialKeyListener.ChangedEventArgs e) => Dispatcher.Invoke(async () =>
     {
         if (!IsLoaded || !IsVisible)
             return;
@@ -88,7 +88,7 @@ public partial class SpectrumKeyboardBacklightControl
         if (await _vantageDisabler.GetStatusAsync() == SoftwareStatus.Enabled)
             return;
 
-        switch (e)
+        switch (e.SpecialKey)
         {
             case SpecialKey.SpectrumBacklightOff
                 or SpecialKey.SpectrumBacklight1
@@ -266,7 +266,7 @@ public partial class SpectrumKeyboardBacklightControl
         {
             _vantageWarningInfoBar.IsOpen = true;
 
-            _device.SetLayout(SpectrumLayout.Full, KeyboardLayout.Ansi, new());
+            _device.SetLayout(SpectrumLayout.Full, KeyboardLayout.Ansi, []);
             _content.IsEnabled = false;
 
             _noEffectsText.Visibility = Visibility.Collapsed;
@@ -334,7 +334,9 @@ public partial class SpectrumKeyboardBacklightControl
     {
         await StopAnimationAsync();
 
-        _refreshStateCancellationTokenSource?.Cancel();
+        if (_refreshStateCancellationTokenSource is not null)
+            await _refreshStateCancellationTokenSource.CancelAsync().ConfigureAwait(false);
+
         _refreshStateCancellationTokenSource = new();
 
         _refreshStateTask = RefreshStateAsync(_refreshStateCancellationTokenSource.Token);
@@ -342,7 +344,10 @@ public partial class SpectrumKeyboardBacklightControl
 
     private async Task StopAnimationAsync()
     {
-        _refreshStateCancellationTokenSource?.Cancel();
+        if (_refreshStateCancellationTokenSource is not null)
+            await _refreshStateCancellationTokenSource.CancelAsync().ConfigureAwait(false);
+
+        _refreshStateCancellationTokenSource = new();
 
         if (_refreshStateTask is not null)
             await _refreshStateTask;

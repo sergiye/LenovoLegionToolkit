@@ -1,21 +1,18 @@
-﻿using System.Threading.Tasks;
+﻿using System.Threading;
+using System.Threading.Tasks;
 using Newtonsoft.Json;
 
 namespace LenovoLegionToolkit.Lib.Automation.Steps;
 
-public class NotificationAutomationStep : IAutomationStep
+[method: JsonConstructor]
+public class NotificationAutomationStep(string? text)
+    : IAutomationStep
 {
-    public string? Text { get; }
-
-    [JsonConstructor]
-    public NotificationAutomationStep(string? text)
-    {
-        Text = text;
-    }
+    public string? Text { get; } = text;
 
     public Task<bool> IsSupportedAsync() => Task.FromResult(true);
 
-    public Task RunAsync(AutomationContext context, AutomationEnvironment environment)
+    public Task RunAsync(AutomationContext context, AutomationEnvironment environment, CancellationToken token)
     {
         if (!string.IsNullOrWhiteSpace(Text))
         {
