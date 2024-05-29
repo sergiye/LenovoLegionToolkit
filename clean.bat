@@ -11,6 +11,9 @@ rmdir /s /q LenovoLegionToolkit.Lib\obj
 rmdir /s /q LenovoLegionToolkit.Lib.Automation\bin
 rmdir /s /q LenovoLegionToolkit.Lib.Automation\obj
 
+rmdir /s /q LenovoLegionToolkit.Lib.Macro\bin
+rmdir /s /q LenovoLegionToolkit.Lib.Macro\obj
+
 rmdir /s /q LenovoLegionToolkit.WPF\bin
 rmdir /s /q LenovoLegionToolkit.WPF\obj
 
