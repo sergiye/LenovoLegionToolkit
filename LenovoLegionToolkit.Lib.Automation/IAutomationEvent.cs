@@ -4,6 +4,11 @@ namespace LenovoLegionToolkit.Lib.Automation;
 
 public interface IAutomationEvent;
 
+public readonly struct HDRAutomationEvent(bool? isHDROn) : IAutomationEvent
+{
+    public bool? IsHDROn { get; } = isHDROn;
+}
+
 public readonly struct NativeWindowsMessageEvent(NativeWindowsMessage message) : IAutomationEvent
 {
     public NativeWindowsMessage Message { get; } = message;
