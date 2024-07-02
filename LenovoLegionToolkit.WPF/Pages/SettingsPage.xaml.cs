@@ -15,6 +15,7 @@ using LenovoLegionToolkit.Lib.SoftwareDisabler;
 using LenovoLegionToolkit.Lib.System;
 using LenovoLegionToolkit.Lib.System.Management;
 using LenovoLegionToolkit.Lib.Utils;
+using LenovoLegionToolkit.WPF.CLI;
 using LenovoLegionToolkit.WPF.Extensions;
 using LenovoLegionToolkit.WPF.Resources;
 using LenovoLegionToolkit.WPF.Utils;
@@ -34,6 +35,7 @@ public partial class SettingsPage
     private readonly RGBKeyboardBacklightController _rgbKeyboardBacklightController = IoCContainer.Resolve<RGBKeyboardBacklightController>();
     private readonly ThemeManager _themeManager = IoCContainer.Resolve<ThemeManager>();
     private readonly HWiNFOIntegration _hwinfoIntegration = IoCContainer.Resolve<HWiNFOIntegration>();
+    private readonly IpcServer _ipcServer = IoCContainer.Resolve<IpcServer>();
 
     private bool _isRefreshing;
 
@@ -76,6 +78,12 @@ public partial class SettingsPage
             _langCardControl.Visibility = Visibility.Collapsed;
         }
 
+        _temperatureComboBox.SetItems(Enum.GetValues<TemperatureUnit>(), _settings.Store.TemperatureUnit, t => t switch
+        {
+            TemperatureUnit.C => Resource.Celsius,
+            TemperatureUnit.F => Resource.Fahrenheit,
+            _ => new ArgumentOutOfRangeException(nameof(t))
+        });
         _themeComboBox.SetItems(Enum.GetValues<Theme>(), _settings.Store.Theme, t => t.GetDisplayName());
 
         UpdateAccentColorPicker();
@@ -143,9 +151,12 @@ public partial class SettingsPage
         _onBatterySinceResetToggle.Visibility = Visibility.Visible;
 
         _hwinfoIntegrationToggle.IsChecked = _integrationsSettings.Store.HWiNFO;
+        _cliInterfaceToggle.IsChecked = _integrationsSettings.Store.CLI;
+        _cliPathToggle.IsChecked = SystemPath.HasCLI();
 
         await loadingTask;
 
+        _temperatureComboBox.Visibility = Visibility.Visible;
         _themeComboBox.Visibility = Visibility.Visible;
         _autorunComboBox.Visibility = Visibility.Visible;
         _minimizeToTrayToggle.Visibility = Visibility.Visible;
@@ -158,6 +169,8 @@ public partial class SettingsPage
         _godModeFnQSwitchableToggle.Visibility = Visibility.Visible;
         _powerModeMappingComboBox.Visibility = Visibility.Visible;
         _hwinfoIntegrationToggle.Visibility = Visibility.Visible;
+        _cliInterfaceToggle.Visibility = Visibility.Visible;
+        _cliPathToggle.Visibility = Visibility.Visible;
 
         _isRefreshing = false;
     }
@@ -173,6 +186,18 @@ public partial class SettingsPage
         await LocalizationHelper.SetLanguageAsync(cultureInfo);
 
         App.Current.RestartMainWindow();
+    }
+
+    private void TemperatureComboBox_SelectionChanged(object sender, SelectionChangedEventArgs e)
+    {
+        if (_isRefreshing)
+            return;
+
+        if (!_temperatureComboBox.TryGetSelectedItem(out TemperatureUnit temperatureUnit))
+            return;
+
+        _settings.Store.TemperatureUnit = temperatureUnit;
+        _settings.SynchronizeStore();
     }
 
     private void ThemeComboBox_SelectionChanged(object sender, SelectionChangedEventArgs e)
@@ -608,5 +633,24 @@ public partial class SettingsPage
         _integrationsSettings.SynchronizeStore();
 
         await _hwinfoIntegration.StartStopIfNeededAsync();
+    }
+
+    private async void CLIInterfaceToggle_Click(object sender, RoutedEventArgs e)
+    {
+        if (_isRefreshing)
+            return;
+
+        _integrationsSettings.Store.CLI = _cliInterfaceToggle.IsChecked ?? false;
+        _integrationsSettings.SynchronizeStore();
+
+        await _ipcServer.StartStopIfNeededAsync();
+    }
+
+    private void CLIPathToggle_Click(object sender, RoutedEventArgs e)
+    {
+        if (_isRefreshing)
+            return;
+
+        SystemPath.SetCLI(_cliPathToggle.IsChecked ?? false);
     }
 }

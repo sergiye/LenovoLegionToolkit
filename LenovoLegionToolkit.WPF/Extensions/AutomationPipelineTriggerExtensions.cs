@@ -16,12 +16,13 @@ public static class AutomationPipelineTriggerExtensions
         IProcessesAutomationPipelineTrigger => SymbolRegular.WindowConsole20,
         IUserInactivityPipelineTrigger => SymbolRegular.ClockAlarm24,
         ITimeAutomationPipelineTrigger => SymbolRegular.HourglassHalf24,
+        IDeviceAutomationPipelineTrigger => SymbolRegular.UsbPlug24,
         INativeWindowsMessagePipelineTrigger => SymbolRegular.Desktop24,
         IOnStartupAutomationPipelineTrigger => SymbolRegular.Flash24,
         IOnResumeAutomationPipelineTrigger => SymbolRegular.Flash24,
         IWiFiConnectedPipelineTrigger => SymbolRegular.Wifi124,
         IWiFiDisconnectedPipelineTrigger => SymbolRegular.WifiOff24,
         IPeriodicAutomationPipelineTrigger => SymbolRegular.ArrowRepeatAll24,
-        _ => throw new ArgumentException($"Unsupported trigger {trigger.GetType().Name}.")
+        _ => throw new ArgumentException($"Unsupported trigger {trigger.GetType().Name}")
     };
 }
