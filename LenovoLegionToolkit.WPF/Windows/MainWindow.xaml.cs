@@ -11,6 +11,7 @@ using LenovoLegionToolkit.Lib.Listeners;
 using LenovoLegionToolkit.Lib.Messaging;
 using LenovoLegionToolkit.Lib.Messaging.Messages;
 using LenovoLegionToolkit.Lib.Settings;
+using LenovoLegionToolkit.Lib.SoftwareDisabler;
 using LenovoLegionToolkit.Lib.Utils;
 using LenovoLegionToolkit.WPF.Extensions;
 using LenovoLegionToolkit.WPF.Pages;
@@ -29,13 +30,16 @@ namespace LenovoLegionToolkit.WPF.Windows;
 public partial class MainWindow
 {
     private readonly ApplicationSettings _applicationSettings = IoCContainer.Resolve<ApplicationSettings>();
-    private readonly UpdateChecker _updateChecker = IoCContainer.Resolve<UpdateChecker>();
     private readonly SpecialKeyListener _specialKeyListener = IoCContainer.Resolve<SpecialKeyListener>();
+    private readonly VantageDisabler _vantageDisabler = IoCContainer.Resolve<VantageDisabler>();
+    private readonly LegionZoneDisabler _legionZoneDisabler = IoCContainer.Resolve<LegionZoneDisabler>();
+    private readonly FnKeysDisabler _fnKeysDisabler = IoCContainer.Resolve<FnKeysDisabler>();
+    private readonly UpdateChecker _updateChecker = IoCContainer.Resolve<UpdateChecker>();
 
     private TrayHelper? _trayHelper;
 
     public bool TrayTooltipEnabled { get; init; } = true;
-
+    public bool DisableConflictingSoftwareWarning { get; set; }
     public bool SuppressClosingEventHandler { get; set; }
 
     public Snackbar Snackbar => _snackbar;
@@ -88,6 +92,7 @@ public partial class MainWindow
         _contentGrid.Visibility = Visibility.Visible;
 
         LoadDeviceInfo();
+        UpdateIndicators();
         CheckForUpdates();
 
         InputBindings.Add(new KeyBinding(new ActionCommand(_navigationStore.NavigateToNext), Key.Tab, ModifierKeys.Control));
@@ -197,25 +202,71 @@ public partial class MainWindow
             }, TaskScheduler.FromCurrentSynchronizationContext());
     }
 
-    private void CheckForUpdates()
+    private void UpdateIndicators()
     {
-        Task.Run(_updateChecker.CheckAsync)
-            .ContinueWith(updatesAvailable =>
+        if (DisableConflictingSoftwareWarning)
+            return;
+
+        _vantageDisabler.OnRefreshed += (_, e) => Dispatcher.Invoke(() =>
+        {
+            _vantageIndicator.Visibility = e.Status == SoftwareStatus.Enabled ? Visibility.Visible : Visibility.Collapsed;
+        });
+
+        _legionZoneDisabler.OnRefreshed += (_, e) => Dispatcher.Invoke(() =>
+        {
+            _legionZoneIndicator.Visibility = e.Status == SoftwareStatus.Enabled ? Visibility.Visible : Visibility.Collapsed;
+        });
+
+        _fnKeysDisabler.OnRefreshed += (_, e) => Dispatcher.Invoke(() =>
+        {
+            _fnKeysIndicator.Visibility = e.Status == SoftwareStatus.Enabled ? Visibility.Visible : Visibility.Collapsed;
+        });
+
+        Task.Run(async () =>
+        {
+            _ = await _vantageDisabler.GetStatusAsync().ConfigureAwait(false);
+            _ = await _legionZoneDisabler.GetStatusAsync().ConfigureAwait(false);
+            _ = await _fnKeysDisabler.GetStatusAsync().ConfigureAwait(false);
+        });
+    }
+
+    public void CheckForUpdates(bool manualCheck = false)
+    {
+        Task.Run(() => _updateChecker.CheckAsync(manualCheck))
+            .ContinueWith(async updatesAvailable =>
             {
                 var result = updatesAvailable.Result;
                 if (result is null)
                 {
                     _updateIndicator.Visibility = Visibility.Collapsed;
-                    return;
+
+                    if (manualCheck && WindowState != WindowState.Minimized)
+                    {
+                        switch (_updateChecker.Status)
+                        {
+                            case UpdateCheckStatus.Success:
+                                await SnackbarHelper.ShowAsync(Resource.MainWindow_CheckForUpdates_Success_Title);
+                                break;
+                            case UpdateCheckStatus.RateLimitReached:
+                                await SnackbarHelper.ShowAsync(Resource.MainWindow_CheckForUpdates_Error_Title, Resource.MainWindow_CheckForUpdates_Error_ReachedRateLimit_Message, SnackbarType.Error);
+                                break;
+                            case UpdateCheckStatus.Error:
+                                await SnackbarHelper.ShowAsync(Resource.MainWindow_CheckForUpdates_Error_Title, Resource.MainWindow_CheckForUpdates_Error_Unknown_Message, SnackbarType.Error);
+                                break;
+                        }
+                    }
                 }
+                else
+                {
+                    var versionNumber = result.ToString(3);
 
-                var versionNumber = result.ToString(3);
+                    _updateIndicatorText.Text =
+                        string.Format(Resource.MainWindow_UpdateAvailableWithVersion, versionNumber);
+                    _updateIndicator.Visibility = Visibility.Visible;
 
-                _updateIndicatorText.Text = string.Format(Resource.MainWindow_UpdateAvailableWithVersion, versionNumber);
-                _updateIndicator.Visibility = Visibility.Visible;
-
-                if (WindowState == WindowState.Minimized)
-                    MessagingCenter.Publish(new NotificationMessage(NotificationType.UpdateAvailable, versionNumber));
+                    if (WindowState == WindowState.Minimized)
+                        MessagingCenter.Publish(new NotificationMessage(NotificationType.UpdateAvailable, versionNumber));
+                }
             }, TaskScheduler.FromCurrentSynchronizationContext());
     }
 

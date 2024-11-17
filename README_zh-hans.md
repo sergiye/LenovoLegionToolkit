@@ -5,6 +5,7 @@
 [![Build](https://github.com/BartoszCichecki/LenovoLegionToolkit/actions/workflows/build.yml/badge.svg?branch=master)](https://github.com/BartoszCichecki/LenovoLegionToolkit/actions/workflows/build.yml)
 [![Crowdin](https://badges.crowdin.net/llt/localized.svg)](https://crowdin.com/project/llt)
 [![Join Discord](https://img.shields.io/discord/761178912230473768?label=Legion%20Series%20Discord)](https://discord.com/invite/legionseries)
+<a href="https://hellogithub.com/repository/dd55be3ac0c146208259f17b29d2162f" target="_blank"><img src="https://abroad.hellogithub.com/v1/widgets/recommend.svg?rid=dd55be3ac0c146208259f17b29d2162f&claim_uid=LBbuUlZqTIm1JAP&theme=small" alt="Featured｜HelloGitHub" /></a>
 
 ---
 
@@ -18,39 +19,9 @@
 
 **中文用户可加入[拯救者工具箱 QQ 频道](https://pd.qq.com/s/jj0737)，频道内推送正式版/测试版更新并附带国内镜像加速下载链接。**
 
-如果你正在寻找一个 Lenovo Vantage 在 Linux 系统下的替代品，请查看 [LenovoLegionLinux](https://github.com/johnfanv2/LenovoLegionLinux) 项目。
-
 <img src="assets/screenshot_zh_hans.png" width="700" />
 
-<details>
-
-<summary><b><i>查看更多软件截图...</i></b></summary>
-
-| **键盘背光设置**                                         |
-| ------------------------------------------------------- |
-| <img src="assets/screenshot_kb.png" width="700" />      |
-
-| **电池数据**                                             |
-| ------------------------------------------------------- |
-| <img src="assets/screenshot_bat.png" width="700" />     |
-
-| **自动化**                                               |
-| ------------------------------------------------------- |
-| <img src="assets/screenshot_actions.png" width="700" /> |
-
-| **键盘宏**                                               |
-| ------------------------------------------------------- |
-| <img src="assets/screenshot_macro.png" width="700" />   |
-
-| **驱动下载**                                             |
-| ------------------------------------------------------- |
-| <img src="assets/screenshot_pkg.png" width="700" />     |
-
-| **自定义模式**                                           |
-| ------------------------------------------------------- |
-| <img src="assets/screenshot_cm.png" width="400" />      |
-
-</details>
+&nbsp;
 
 # 目录
   - [免责声明](#免责声明)
@@ -92,12 +63,15 @@
   scoop install extras/lenovolegiontoolkit
   ```
 
+> [!TIP]
+> 如果你正在寻找一个 Lenovo Vantage 在 Linux 系统下的替代品，请查看 [LenovoLegionLinux](https://github.com/johnfanv2/LenovoLegionLinux) 项目。
 
 #### 接下来的步骤
 
 拯救者工具箱在后台运行时效果最好，所以去设置中启用_开机启动_和_关闭时最小化_。接下载就是在设置中禁用 Lenovo Vantage, Legion Zone 与 Lenovo Hotkeys，或者你也可以直接卸载他们。之后，拯救者工具箱将会在开机后自启并在后台一直保持运行，并接管 Lenovo Vantage, Legion Zone 与 Lenovo Hotkeys 的功能。
 
-另，如果你完全关闭拯救者工具箱，一些功能例如同步不同的性能模式（Fn + Q）与电源计划，键盘宏以及自动化功能将无法正常工作。这是因为 LLT **不运行任何后台服务**，也就意味着其无法在被完全关闭时响应指令或执行设置同步。
+> [!WARNING]
+> 如果你完全关闭拯救者工具箱，一些功能例如同步不同的性能模式（Fn + Q）与电源计划，键盘宏以及自动化功能将无法正常工作。这是因为 LLT **不运行任何后台服务**，也就意味着其无法在被完全关闭时响应指令或执行设置同步。
 
 另外，请查看下方的 [兼容性](#兼容性) 部分。
 
@@ -117,7 +91,8 @@
 3. 点击安装程序下的“X64”一栏下载安装程序；
 4. 运行安装程序并按照指引进行安装。
 
-> 注意：如果你是使用 Scoop 安装了 LLT，.NET 8 依赖应该已经被自动安装。如果它没有被安装或 LLT 无法正常启动，可以使用 `scoop update` 以更新所有软件包并加上 `--force` 参数以强制重新安装 LLT。
+> [!NOTE]
+> 如果你是使用 Scoop 安装了 LLT，.NET 8 依赖应该已经被自动安装。如果它没有被安装或 LLT 无法正常启动，可以使用 `scoop update` 以更新所有软件包并加上 `--force` 参数以强制重新安装 LLT。
 
 
 在完成这些步骤后，你可以打开终端并输入： `dotnet --info`。在输出中寻找 "已安装的 .NET 运行时 "部分，你应该能看到类似的内容：
@@ -150,6 +125,9 @@
 
 总的来说，建议在使用拯救者工具箱时禁用或卸载 Lenovo Vantage、Hotkeys 和 Legion Zone。当拯救者工具箱与其他联想应用程序一起工作时，可能会导致部分功能冲突或可能无法正常工作。
 
+> [!TIP]
+> 一般来说最简单的解决方法就是使用拯救者工具箱内的禁用选项。
+
 ### 备注
 
 拯救者工具箱目前不支持多用户安装，所以如果你的笔记本电脑上有多个用户，你可能会遇到兼容性问题，即使是没有管理员权限的账户。拯救者工具箱需要一个有管理员权限的账户，拯救者工具箱无法在普通账户上正常运行。
@@ -161,10 +139,11 @@
 - 改变诸如性能模式、充电模式等只有通过 Lenovo Vantage、联想电脑管家才能更改的设置。
 - 使用并修改自定义模式，包括 2022 款及更新的机型的调节风扇曲线功能。
 - 支持调节 Spectrum RGB 键盘、4 分区 RGB 键盘和白色背光的键盘。
-- 强制休眠独立显卡（仅限英伟达显卡）。
+- 监控独立显卡活动（仅限英伟达显卡）。
+- 设置当电脑接通电源时自动运行的操作。
 - 查看电池统计数据。
+- 从命令行控制设备。
 - 下载、更新驱动。
-- 通过自动化实现插入/拔出充电器的自动操作。
 - 无需卸载即可禁用 Lenovo Vantage、Legion Zone 和 Lenovo Hotkeys 服务。
 
 ### 自定义模式
@@ -189,9 +168,13 @@ LLT 也支持其他像一级或三级白色键盘背光，Legion Logo 背光和�
 
 需要 Corsair iCue 的灯光控制不会被 LLT 支持。
 
-_**注意：** 目前已知 Riot Vanguard DRM（使用它的游戏有例如：瓦罗兰特） 会造成 RGB 和灯光控制功能出现问题。如果你在安装了它之后发现了 LLT 内 RGB 设置消失的错误，请卸载它或确保它并非开机自启项。_
+> [!IMPORTANT]
+> 目前已知 Riot Vanguard DRM（使用它的游戏有例如：瓦罗兰特） 会造成 RGB 和灯光控制功能出现问题。如果你在安装了它之后发现了 LLT 内 RGB 设置消失的错误，请卸载它或确保它并非开机自启项。
 
 ### 混合模式和显卡工作模式
+
+> [!NOTE]
+> 请注意这些功能和英伟达 Advanced Optimus 动态显示切换不同，也不与其一同工作。
 
 你有两种主要工作模式来控制你的独立显卡工作方式：
 
@@ -211,9 +194,8 @@ _**注意：** 目前已知 Riot Vanguard DRM（使用它的游戏有例如：�
 
 如果你还遇到问题，请尝试[命令行参数](#命令行参数)内的其他实验性显卡工作模式。
 
-**通过设备管理器禁用独立显卡并不会断开独立显卡连接，并同时会导致高耗电量！**
-
-请注意这些功能和英伟达 Advanced Optimus 动态显示切换不同，也不与其一同工作。
+> [!WARNING]
+> 通过设备管理器禁用独立显卡并不会断开独立显卡连接，并同时会导致高耗电量！
 
 ### 强制休眠英伟达显卡
 
@@ -226,7 +208,8 @@ _**注意：** 目前已知 Riot Vanguard DRM（使用它的游戏有例如：�
 
 当独显处于活动状态，并使用混合模式且没有外接显示器到独显上时，强制休眠显卡才会亮起。如果你将鼠标悬停在右侧的问号标志上，将会看到独显的状态与正在使用独显的进程。
 
-注意，强制休眠显卡可能会导致一些应用崩溃。
+> [!NOTE]
+> 强制休眠显卡可能会导致一些应用崩溃。
 
 ### 超频英伟达独立显卡
 
@@ -266,9 +249,8 @@ _**注意：** 目前已知 Riot Vanguard DRM（使用它的游戏有例如：�
 
 你可以在自动化中使用“运行”步骤执行任何程序或脚本。在配置时你需要提供程序（`.exe`）或脚本（`.bat`）的路径。你也可以提供程序或脚本的参数，就像在命令行下运行它们一样。
 
-#### 实例
-
-以下是一些实用的例子：
+<details>
+<summary>实例</summary>
 
 _关闭电脑_
  - 执行路径：`shutdown`
@@ -290,87 +272,99 @@ _运行 Python 脚本_
  - 执行路径：`C:\path\to\python.exe`（若你已经将 Python 的安装路径加入了 PATH 环境变量，你也可以直接使用 `python`）
  - 参数：`C:\path\to\script.py`
 
+ </details>
+
 #### 环境变量
 
-LLT 会自动在进程运行环境内添加一些可被访问的环境变量。这些环境变量对于需要执行上下文的高级脚本会十分实用。根据触发器的不同 LLT 会添加不同的环境变量：
+LLT 会自动在进程运行环境内添加一些可被访问的环境变量。这些环境变量对于需要执行上下文的高级脚本会十分实用。根据触发器的不同 LLT 会添加不同的环境变量。
+
+<details>
+<summary>环境变量</summary>
 
 - 当电源适配器插入时
 	- `LLT_IS_AC_ADAPTER_CONNECTED=TRUE`
-
 - 当较低功率电源适配器插入时
 	- `LLT_IS_AC_ADAPTER_CONNECTED=TRUE`
 	- `LLT_IS_AC_ADAPTER_LOW_POWER=TRUE`
-
 - 当电源适配器断开时
 	- `LLT_IS_AC_ADAPTER_CONNECTED=FALSE`
-
 - 当性能模式改变时
 	- `LLT_POWER_MODE=<value>`，`value` 的值由当前性能模式决定：`1` 为安静模式，`2` 为均衡模式，`3` 为野兽模式，`255` 为自定义模式
 	- `LLT_POWER_MODE_NAME=<value>`，`value` 的值为当前性能模式对应的英语大写名称：`QUIET`, `BALANCE`, `PERFORMANCE`, `CUSTOM`
-
 - 当打开游戏时
 	- `LLT_IS_GAME_RUNNING=TRUE`
-
 - 当关闭游戏时
 	- `LLT_IS_GAME_RUNNING=FALSE`
-
 - 当应用程序启动时
 	- `LLT_PROCESSES_STARTED=TRUE`
 	- `LLT_PROCESSES=<value>`，`value` 的值为以逗号分隔的进程名
-
 - 当指定的应用关闭时
 	- `LLT_PROCESSES_STARTED=FALSE`
-	- `LLT_PROCESSES=<value>`，`value` 的值为以逗号分隔的进程名
-	
+	- `LLT_PROCESSES=<value>`，`value` 的值为以逗号分隔的进程名	
 - 打开盖子时
 	- `LLT_IS_LID_OPEN=TRUE`
-
 - 合上盖子时
 	- `LLT_IS_LID_OPEN=FALSE`
-
 - 当显示器打开时
 	- `LLT_IS_DISPLAY_ON=TRUE`
-
 - 当显示器关闭时
 	- `LLT_IS_DISPLAY_ON=FALSE`
-
 - 当连接了外置屏幕后
 	- `LLT_IS_EXTERNAL_DISPLAY_CONNECTED=TRUE`
-
 - 当断开了外置屏幕后
 	- `LLT_IS_EXTERNAL_DISPLAY_CONNECTED=FALSE`
-
 - 当启用 HDR 时
 	- `LLT_IS_HDR_ON=TRUE`
-
 - 当关闭 HDR 时
 	- `LLT_IS_HDR_ON=FALSE`
-
 - 当与 Wi-Fi 连接时
 	- `LLT_WIFI_CONNECTED=TRUE`
 	- `LLT_WIFI_SSID=<value>`，`value` 的值为网络的 SSID
-
 - 当与 Wi-Fi 断开连接时
-	- `LLT_WIFI_CONNECTED=FALSE`
-	
+	- `LLT_WIFI_CONNECTED=FALSE`	
 - 在特定的时间
 	- `LLT_IS_SUNSET=<value>`，`value` 的值为 `TRUE` 或 `FALSE`，取决于触发器的设置
 	- `LLT_IS_SUNRISE=<value>`，`value` 的值为 `TRUE` 或 `FALSE`，取决于触发器的设置
 	- `LLT_TIME"`，`value` 的值为 `HH:mm`，取决于触发器的设置
 	- `LLT_DAYS"`, `value` 的值为以逗号分隔的包含以下内容的列表：`MONDAY`、`TUESDAY`、`WEDNESDAY`、`THURSDAY`、`FRIDAY`、`SATURDAY`、`SUNDAY`，取决于触发器的设置
-	
 - 循环自动化
 	- `LLT_PERIOD=<value>`，`value` 的值为间隔的秒数
-	
 - 当开机时
 	- `LLT_STARTUP=TRUE`
-	
 - 当唤醒时
 	- `LLT_RESUME=TRUE`
+
+</details>
 
 #### 程序输出
 
 当 `等待运行结束` 被启用时，LLT 会抓取被启动的进程的标准输出流内的内容。这些程序输出会被存入 `$RUN_OUTPUT$` 变量，并可在“显示提示弹窗”步骤中使用。
+
+### 命令行界面
+
+你可以在命令行内直接控制 LLT 的部分功能。LLT 命令行界面的可执行文件位于安装文件夹下，名为 `llt.exe`。
+
+命令行界面需要 LLT 在后台运行并且在设置内启用命令行界面，否则其无法正常工作。你也可以选择将命令行界面添加至你的用户 `PATH` 环境变量。
+
+使用命令行界面无需管理员权限。
+
+<details>
+<summary>功能</summary>
+
+* `llt quickAction --list` - 列出所有快捷操作
+* `llt quickAction <name>` - 执行快捷操作 `<name>`
+* `llt feature --list` - 列出所有可用功能
+* `llt feature get <name>` - 打印功能 `<name>` 当前的值
+* `llt feature set <name> --list` - 列出功能 `<name>` 所有可设定的值
+* `llt feature set <name> <value>` - 将功能 `<name>` 的值设定为 `<value>`
+* `llt spectrum profile get` - 打印当前 Spectrum RGB 预设
+* `llt spectrum profile set <profile>` - 将 Spectrum RGB 预设设定为 `<profile>`
+* `llt spectrum brightness get` - 打印当前 Spectrum RGB 的亮度
+* `llt spectrum brightness set <brightness>` - 将 Spectrum RGB 的亮度设定为 `<brightness>`
+* `llt rgb get` - 打印当前四分区 RGB 预设
+* `llt rgb set <profile>` - 将四分区 RGB 预设设定为 `<preset>`
+
+</details>
 
 ## 赞助
 
@@ -388,6 +382,7 @@ LLT 会自动在进程运行环境内添加一些可被访问的环境变量。�
 * [falahati](https://github.com/falahati) 创建了 [NvAPIWrapper](https://github.com/falahati/NvAPIWrapper) 和 [WindowsDisplayAPI](https://github.com/falahati/WindowsDisplayAPI)
 * [SmokelessCPU](https://github.com/SmokelessCPU) 帮助我适配了四分区 RGB 键盘背光。
 * [Mario Bălănică](https://github.com/mariobalanica) 的所有贡献。
+* [Ace-Radom](https://github.com/Ace-Radom) 的所有贡献。
 
 翻译贡献者：
 * 保加利亚语 - [Ekscentricitet](https://github.com/Ekscentricitet)
@@ -470,7 +465,10 @@ LLT 会自动在进程运行环境内添加一些可被访问的环境变量。�
 
 在 2.11.0 版本后，拯救者工具箱与 Lenovo Vantage 与 Legion Zone 的行为保持一致，将不再允许在没有插入适当电源适配器的情况下启用野兽与自定义模式。
 
-如果出于某种原因，你想在电池供电的情况下使用这些模式，你可以使用`--allow-all-power-modes-on-battery`参数来启用（参见[命令行参数](#命令行参数)）。请注意，当笔记本电脑没有连接到全功率的电源适配器时，功耗限制与其他设置在大多数设备上无法正常应用，同时可能会出现一些未知的问题。
+如果出于某种原因，你想在电池供电的情况下使用这些模式，你可以使用`--allow-all-power-modes-on-battery`参数来启用（参见[命令行参数](#命令行参数)）。
+
+> [!WARNING]
+> 当笔记本电脑没有连接到全功率的电源适配器时，功耗限制与其他设置在大多数设备上无法正常应用，同时可能会出现一些未知的问题。
 
 #### 我可以在使用拯救者工具箱时使用其他RGB软件吗？
 
@@ -572,19 +570,13 @@ Windows 可能无法正确识别所有的游戏，但你可以在 Xbox Game Bar 
 
 我感谢你们提交的任何反馈！不要犹豫，直接提交 Issue。我们也欢迎提交 PR，但提交 PR 前务必查看 [CONTRIBUTING.md](CONTRIBUTING.md) 文件！
 
-（译者提示：由于 LLT 并非由国人发起的项目，主要开发者也大多来自欧美，为了整体交流环境的统一和协调，所有 Issue，PR 和 Commit Message **必须**使用英语书写，否则将被直接关闭并锁定，**没有例外**。此点也已在 [CONTRIBUTING.md](CONTRIBUTING.md) 中说明。若你无法流畅地使用英语表达，你可以在使用中文完成草稿后使用百度翻译或 [DeepL](https://www.deepl.com/zh/translator) 等翻译网站或软件将草稿翻译为英语后提交。）
-
-#### 翻译
-
-我们已选择 Crowdin 为翻译平台。如果你想提交软件内文本翻译请访问 https://crowdin.com/project/llt 并申请权限。
-
-对于此简体中文版 README 则可以直接在代码仓库里提交 PR 贡献翻译。
-
-#### Bugs
-
-如果你发现了软件中的任何 Bug 和问题，请报告。如果你附上日志将会对我们发现问题的根本原因十分有帮助。 你可以在 `%LOCALAPPDATA%\LenovoLegionToolkit\log` 找到日志文件。提交 Issue 时记得附上最新的日志文件！
+> [!IMPORTANT]
+> 译者提示：由于 LLT 并非由国人发起的项目，主要开发者也大多来自欧美，为了整体交流环境的统一和协调，所有 Issue，PR 和 Commit Message **必须**使用英语书写，否则将被直接关闭并锁定，**没有例外**。此点也已在 [CONTRIBUTING.md](CONTRIBUTING.md) 中说明。若你无法流畅地使用英语表达，你可以在使用中文完成草稿后使用百度翻译或 [DeepL](https://www.deepl.com/zh/translator) 等翻译网站或软件将草稿翻译为英语后提交。
 
 #### 适配
+
+> [!IMPORTANT]
+> 拯救者工具箱只目标适配联想拯救者（海内及海外版）、IdeaPad Gaming 和 LOQ 系列。请不要为除上述系列以外的设备提出兼容请求。
 
 如果能适配更多设备就更好了！但要做到这点，我真的很需要你的帮助！
 
