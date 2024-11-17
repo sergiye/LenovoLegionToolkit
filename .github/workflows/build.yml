@@ -25,7 +25,7 @@ jobs:
     - name: Upload artifact
       uses: actions/upload-artifact@v4
       with:
-        name: zip
+        name: LenovoLegionToolkitPortable
         # path: build_installer\LenovoLegionToolkitSetup.exe
         path: |
           build
