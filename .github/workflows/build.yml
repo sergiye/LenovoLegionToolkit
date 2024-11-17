@@ -2,9 +2,9 @@ name: Build
 
 on:
   push:
-    branches: [ master ]
+    branches: [ feature/updatable-status-window ]
   pull_request:
-    branches: [ master ]
+    branches: [ feature/updatable-status-window ]
 
 jobs:
   build:
@@ -23,7 +23,9 @@ jobs:
     - name: Build
       run: .\make.bat
     - name: Upload artifact
-      uses: actions/upload-artifact@v3
+      uses: actions/upload-artifact@v4
       with:
-        name: installer
-        path: build_installer\LenovoLegionToolkitSetup.exe
+        name: zip
+        # path: build_installer\LenovoLegionToolkitSetup.exe
+        path: |
+          build
