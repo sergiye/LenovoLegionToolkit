@@ -133,7 +133,7 @@ namespace LenovoLegionToolkit.WPF.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to 3rd party libraries.
+        ///   Looks up a localized string similar to Third-party libraries.
         /// </summary>
         public static string AboutPage_ThirdPartyLibraries {
             get {
@@ -1553,7 +1553,7 @@ namespace LenovoLegionToolkit.WPF.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to DGPU connected.
+        ///   Looks up a localized string similar to dGPU connected.
         /// </summary>
         public static string DGPU_Connected_Title {
             get {
@@ -1562,7 +1562,7 @@ namespace LenovoLegionToolkit.WPF.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to DGPU disconnected.
+        ///   Looks up a localized string similar to dGPU disconnected.
         /// </summary>
         public static string DGPU_Disconnected_Title {
             get {
@@ -2522,7 +2522,7 @@ namespace LenovoLegionToolkit.WPF.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Custom Mode settings will not be applied correctly when LegionZone or it&apos;s services are running..
+        ///   Looks up a localized string similar to Custom Mode settings will not be applied correctly when Legion Zone or its services are running..
         /// </summary>
         public static string GodModeSettingsWindow_LegionZoneWarning_Title {
             get {
@@ -2540,7 +2540,7 @@ namespace LenovoLegionToolkit.WPF.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Custom Mode settings will not be applied correctly when Lenovo Vantage or it&apos;s services are running..
+        ///   Looks up a localized string similar to Custom Mode settings will not be applied correctly when Lenovo Vantage or its services are running..
         /// </summary>
         public static string GodModeSettingsWindow_VantageWarning_Title {
             get {
@@ -2741,7 +2741,7 @@ namespace LenovoLegionToolkit.WPF.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Keyboard backlight cannot be controlled in here when Vantage or its services are running..
+        ///   Looks up a localized string similar to Keyboard backlight cannot be controlled in here when Lenovo Vantage or its services are running..
         /// </summary>
         public static string Keyboard_VantageEnabledWarning_Message {
             get {
@@ -3470,7 +3470,7 @@ namespace LenovoLegionToolkit.WPF.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Disables notification for Fn keys actions like microphone mute
+        ///   Looks up a localized string similar to Disables notification for Fn keys actions like microphone mute.
         ///Enable this option if you have conflicts with full screen applications..
         /// </summary>
         public static string NotificationsSettingsWindow_DontShowNotifications_Message {
@@ -4312,6 +4312,24 @@ namespace LenovoLegionToolkit.WPF.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Run a saved quick action..
+        /// </summary>
+        public static string QuickActionAutomationStepControl_Message {
+            get {
+                return ResourceManager.GetString("QuickActionAutomationStepControl_Message", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Quick Action.
+        /// </summary>
+        public static string QuickActionAutomationStepControl_Title {
+            get {
+                return ResourceManager.GetString("QuickActionAutomationStepControl_Title", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Readme.
         /// </summary>
         public static string ReadmeWindow_Title {
@@ -5022,7 +5040,7 @@ namespace LenovoLegionToolkit.WPF.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Vantage and/or ImController may have not been disabled correctly.
+        ///   Looks up a localized string similar to Lenovo Vantage and/or ImController may have not been disabled correctly.
         /// </summary>
         public static string SettingsPage_DisableVantage_Error_Message {
             get {
@@ -5031,7 +5049,7 @@ namespace LenovoLegionToolkit.WPF.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Couldn&apos;t disable Vantage and/or ImController.
+        ///   Looks up a localized string similar to Couldn&apos;t disable Lenovo Vantage and/or ImController.
         /// </summary>
         public static string SettingsPage_DisableVantage_Error_Title {
             get {
@@ -5095,7 +5113,7 @@ namespace LenovoLegionToolkit.WPF.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Vantage and/or ImController may have not been enabled correctly.
+        ///   Looks up a localized string similar to Lenovo Vantage and/or ImController may have not been enabled correctly.
         /// </summary>
         public static string SettingsPage_EnableVantage_Error_Message {
             get {
@@ -5104,7 +5122,7 @@ namespace LenovoLegionToolkit.WPF.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Couldn&apos;t enable Vantage and/or ImController.
+        ///   Looks up a localized string similar to Couldn&apos;t enable Lenovo Vantage and/or ImController.
         /// </summary>
         public static string SettingsPage_EnableVantage_Error_Title {
             get {
@@ -6034,7 +6052,7 @@ namespace LenovoLegionToolkit.WPF.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Turn off WiFi.
+        ///   Looks up a localized string similar to Turn off Wi-Fi.
         /// </summary>
         public static string TurnOffWiFiAutomationStepControl_Title {
             get {
@@ -6043,7 +6061,7 @@ namespace LenovoLegionToolkit.WPF.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Turn on WiFi.
+        ///   Looks up a localized string similar to Turn on Wi-Fi.
         /// </summary>
         public static string TurnOnWiFiAutomationStepControl_Title {
             get {
