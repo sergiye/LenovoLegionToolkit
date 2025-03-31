@@ -3525,6 +3525,24 @@ namespace LenovoLegionToolkit.WPF.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Show notification on all screens connected to your device..
+        /// </summary>
+        public static string NotificationsSettingsWindow_NotificationOnAllScreens_Message {
+            get {
+                return ResourceManager.GetString("NotificationsSettingsWindow_NotificationOnAllScreens_Message", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Notification on all screens.
+        /// </summary>
+        public static string NotificationsSettingsWindow_NotificationOnAllScreens_Title {
+            get {
+                return ResourceManager.GetString("NotificationsSettingsWindow_NotificationOnAllScreens_Title", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Position.
         /// </summary>
         public static string NotificationsSettingsWindow_NotificationPosition_Title {
@@ -6071,9 +6089,7 @@ namespace LenovoLegionToolkit.WPF.Resources {
         
         /// <summary>
         ///   Looks up a localized string similar to Unexpected exception occurred:
-        ///{0}
-        ///
-        ///Please report the issue on {1}..
+        ///{0}.
         /// </summary>
         public static string UnexpectedException {
             get {
